@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1/new.min.css">
+
+</head>
+<body>
+<form method="post" th:action="@{/upload}" enctype="multipart/form-data">
+    <div class="form-group">
+        <input type="file" name="file" class="form-control-file">
+    </div>
+    <button type="submit" class="btn btn-primary">Upload File</button>
+</form>
+
+<pre th:if="${ocr}" th:text="${ocr}"></pre>
+<a th:if="${downloadLink}" th:href="${downloadLink}" download>Download</a>
+</body>
+</html>
